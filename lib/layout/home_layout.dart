@@ -12,7 +12,8 @@ class HomeLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final GlobalKey<CurvedNavigationBarState> _bottomNavigationKey = GlobalKey();
+    final GlobalKey<CurvedNavigationBarState> _bottomNavigationKey =
+        GlobalKey();
     return BlocProvider(
       create: (BuildContext context) => AppCubit(),
       child: BlocConsumer<AppCubit, AppStates>(
@@ -23,45 +24,47 @@ class HomeLayout extends StatelessWidget {
             drawer: const MyDrawer(),
             appBar: AppBar(
               centerTitle: true,
-              title: Text(cubit.appBarTitle[cubit.currentIndex], style: TextStyle(fontSize: Dimensions.font26),),
-
+              title: Text(
+                cubit.appBarTitle[cubit.currentIndex],
+                style: TextStyle(fontSize: Dimensions.font26),
+              ),
             ),
             body: cubit.screens[cubit.currentIndex],
             bottomNavigationBar: CurvedNavigationBar(
-            key: _bottomNavigationKey,
-            index: 1,
-            backgroundColor: Color.fromARGB(255, 253, 247, 230),
-            color: Colors.green,
-            height: 50,
-            animationDuration: const Duration(microseconds: 200),
-            items: [
-              bottomNavItemIcon(
-                icon: 'assets/images/q.png',
-              ),
-              bottomNavItemIcon(
-                icon: 'assets/images/a.png',
-              ),
-              bottomNavItemIcon(
-                icon: 'assets/images/s.png',
-              ),
-            ],
-            onTap: (index) {
-              cubit.changeBottomNavBar(index);
-            },
-            letIndexChange: (index) => true,
-          ),
+              key: _bottomNavigationKey,
+              index: 1,
+              backgroundColor: Color.fromARGB(255, 253, 247, 230),
+              color: Colors.green,
+              height: Dimensions.height30 * 2,
+              animationDuration: const Duration(microseconds: 200),
+              items: [
+                bottomNavItemIcon(
+                  icon: 'assets/images/q.png',
+                ),
+                bottomNavItemIcon(
+                  icon: 'assets/images/a.png',
+                ),
+                bottomNavItemIcon(
+                  icon: 'assets/images/s.png',
+                ),
+              ],
+              onTap: (index) {
+                cubit.changeBottomNavBar(index);
+              },
+              letIndexChange: (index) => true,
+            ),
           );
         },
       ),
     );
   }
+
   Widget bottomNavItemIcon({
     required String icon,
   }) =>
       CircleAvatar(
         backgroundImage: AssetImage(icon),
         backgroundColor: Colors.white,
-        radius: Dimensions.radius10*5/2,
+        radius: Dimensions.radius10 * 5 / 2,
       );
-
 }
