@@ -28,7 +28,7 @@ class SurahBuilder extends StatefulWidget {
 }
 
 class _SurahBuilderState extends State<SurahBuilder> {
-  bool view = false;
+  bool view = true;
 
   @override
   void initState() {

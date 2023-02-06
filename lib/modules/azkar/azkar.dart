@@ -55,12 +55,19 @@ class AzkarScreen extends StatelessWidget {
                       padding: EdgeInsets.only(
                           top: Dimensions.height20, right: Dimensions.width20),
                       child: Column(
+                        //crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
-                          Text(
-                            'بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ',
-                            style: TextStyle(
-                              fontSize: Dimensions.font20,
-                              color: Colors.white,
+                          Container(
+                            width: double.maxFinite,
+                            padding: EdgeInsets.only(left: Dimensions.width45*2 + Dimensions.width30),
+                            //alignment: Alignment.centerRight,
+                            child: Text(
+                              'بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ',
+                              style: TextStyle(
+                                fontSize: Dimensions.font20,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
                             ),
                           ),
                           SizedBox(

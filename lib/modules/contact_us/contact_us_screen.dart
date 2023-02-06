@@ -100,7 +100,7 @@ class ContactUsScreen extends StatelessWidget {
                             padding: EdgeInsets.only(right: Dimensions.width10),
                             child: defaultTextFormField(
                               controller: nameController,
-                              keyboardType: TextInputType.text,
+                              keyboardType: TextInputType.name,
                               label: 'الإسم',
                               validator: (String? value) {
                                 if (value!.isEmpty) {
