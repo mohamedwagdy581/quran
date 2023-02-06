@@ -23,6 +23,7 @@ Widget defaultTextFormField({
       style: textStyle,
       controller: controller,
       keyboardType: keyboardType,
+      autofocus: true,
       onTap: onTap,
       enabled: isClickable,
       validator: validator,
